@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p{
+  line-height: 1.5 !important;
+  font-size: 1rem;
+}
+
+.wrapper{
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #5eb509;
+}
+
+header a{
+  width: 150px;
+  height: 120px;
+}
+
+header img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section{
+  padding: 30px; 
+}
+section h1{
+  text-align: center; 
+  color: red;
+}
+
+section .container{
+  display: flex;
+  flex-direction: column;
+}
+
+.demo{
+  text-align: center;
+  padding: 30px;
+  border-bottom: 3px solid #5eb509;
+}
+
+.demo .row{
+  margin-top: 30px;
+}
+
+.demo .row h2{
+  margin-bottom: 30px;
+}
+
+.value-group{
+  display: flex;
+  justify-content: space-start;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;  
+}
+
+.value-group p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 300px;
+}
+
+.value-group input{
+  width: 150px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 30px;
+}
+
+.value-group button {
+  padding: 8px 15px;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.value-group button:hover {
+  background: darkblue;
+}

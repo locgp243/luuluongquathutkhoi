@@ -24,6 +24,8 @@
         <div class="row">
             <h2>Hướng dẫn tính toán</h2>
             <img src="./assets/images/bangtinh.png" alt="">
+            <img src="./assets//images/image.png" alt="bản vẽ demo 1">
+
         </div>
       </div>
     </section>
@@ -31,61 +33,110 @@
     <section>
       <h1>CÔNG THỨC TÍNH TOÁN</h1>
       <div class="value-group">
-        <p>A: Diện tích của gian phòng lớn nhất, bất lợi nhất</p>
+        <p>A:</p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Diện tích của gian phòng lớn nhất, bất lợi nhất. Lấy chiều dài nhân chiều rộng của gian phòng lớn nhất. Theo bản vẽ thì là 104 x 38</span>
+        </span> 
         <input id="length" type="number" placeholder="Nhập chiều dài (m)" />
         <input id="width" type="number" placeholder="Nhập chiều rộng (m)" />
-        <input id="area-1" type="text" placeholder="Diện tích (m²)" disabled />
+        <input id="area-1" type="text" placeholder="Diện tích (m²)" readonly />
         <button onclick="calculateArea1()">Kết quả</button>
       </div>
       <div class="value-group">
-        <p>A<sub>k</sub>: Vùng khói tính toán </p>
-        <input id="vungkhoi" type="number" placeholder="Nhập vùng khói" />
-        <input id="width" type="number" placeholder="Nhập chiều rộng (m)" />
-        <input id="area-1" type="text" placeholder="Diện tích (m²)" disabled />
-        <button onclick="calculateArea1()">Kết quả</button>
+        <p>A<sub>k</sub> (m<sup>2</sup>): </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Vùng khói tính toán lấy diện tích gian phòng lớn nhất chia cho số vùng khói. Trong bản vẽ trên thì là 3952 / 4 = 988 m<sup>2</sup> (không được >= 1600 m<sup>2</sup>)</span>
+        </span> 
+        <!-- <input id="vungkhoi" type="number" placeholder="Nhập vùng khói" />
+        <input id="width" type="number" placeholder="Nhập chiều rộng (m)" /> -->
+        <input id="ak" type="text" placeholder="Vùng khói tính toán" />
+        <!-- <button onclick="calculateArea1()">Kết quả</button> -->
       </div>
       <div class="value-group">
         <p>Số vùng khói trong 1 khoang cháy lớn nhất</p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Xem trên bản vẽ, theo bản vẽ trên thì là 4</span>
+        </span>
         <input id="sovungkhoi" type="number" placeholder="Nhập số vùng khói trong 1 khoang cháy" />
-        <button onclick="calculateArea2()">Kết quả</button>
+        <!-- <button onclick="calculateArea2()">Kết quả</button> -->
       </div>
       <div class="value-group">
-        <p>P<sub>f</sub> (m): Chu vi vùng cháy</p>
-        <input id="pf" type="number" placeholder="Nhập vùng khói" />
-        <input id="area-3" type="text" placeholder="Diện tích (m²)" disabled />
+        <p>P<sub>f</sub> (m): </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Chu vi vùng cháy: 4<= P<sub>f</sub> = 0.38 * A<sup>0.5</sup> <= 12. Theo bản vẽ thì chu vi vùng cháy ban đầu là 12 m</span>
+        </span>
+        <input id="pf" type="number" placeholder="Nhập Pf ban đầu (nếu có)" />
+
+        <input id="a" type="number" placeholder="Nhập A" />
+        <input id="area-3" type="text" placeholder="Kết quả (m)" readonly />
         <button onclick="calculateArea3()">Kết quả</button>
       </div>
       <div class="value-group">
-        <p>y: Khoảng cách từ mép dưới của vùng khói đến sàn nhà, đối với gian phòng lấy bằng 2,5m</p>
+        <p>y:</p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Khoảng cách từ mép dưới của vùng khói đến sàn nhà, đối với gian phòng lấy bằng 2,5m</span>
+        </span> 
         <input id="y" type="number" placeholder="Nhập y" />
-        <!-- <input id="area-3" type="text" placeholder="Diện tích (m²)" disabled /> -->
-        <!-- <button onclick="calculateArea3()">Kết quả</button> -->
       </div>
       <div class="value-group">
-        <p>K<sub>s</sub>: là hệ số, lấy bằng 1, đối với hệ thống thải khói tự nhiên kết hợp với chữa cháy sprinkler thì lấy  K<sub>2</sub>=1,2</p>
+        <p>K<sub>s</sub>:</p>
+        <span class="tooltip">?
+          <span class="tooltip-text">là hệ số, lấy bằng 1, đối với hệ thống thải khói tự nhiên kết hợp với chữa cháy sprinkler thì lấy  K<sub>2</sub>=1,2 </span>
+        </span> 
         <input id="ks" type="number" placeholder="Nhập k" />
         <!-- <input id="area-3" type="text" placeholder="Diện tích (m²)" disabled /> -->
         <!-- <button onclick="calculateArea3()">Kết quả</button> -->
       </div>
       <div class="value-group">
-        <p>G (kg/h): Lưu lượng khói cần phải hút G = 678,8 * P<sub>f</sub> * y<sup>1,5</sup> * K<sub>s</sub></p>
-        <input id="g" disabled placeholder="Kết quả" />
+        <p>G (kg/h): Lưu lượng khói cần phải hút</p>
+        <span class="tooltip">?
+          <span class="tooltip-text">G = 678,8 * P<sub>f</sub> * y<sup>1,5</sup> * K<sub>s</sub></span>
+        </span> 
+        <input id="G" readonly placeholder="Kết quả" />
         <!-- <input id="area-3" type="text" placeholder="Diện tích (m²)" disabled /> -->
         <button onclick="calculateArea4()">Kết quả</button>
       </div>
       <div class="value-group">
-        <p>g: Khói lượng riêng của khói g = 1.2kg/m<sup>3</sup></p>
-        <input id="g" disabled value="1.2" />
-        <!-- <input id="area-3" type="text" placeholder="Diện tích (m²)" disabled /> -->
-        <!-- <button onclick="calculateArea4()">Kết quả</button> -->
+        <p>g: </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Khối lượng riêng của khói, theo bản vẽ trên thì là 1.2kg/m<sup>3</sup></span>
+        </span> 
+        <input id="g" type="number" placeholder="nhập g"/>
       </div>
       <div class="value-group">
-        <p>Q: Lưu lượng khói tính toán cho một vùng khói = G / g (kg/m<sup>3</sup>)</p>
-        <input id="g1" placeholder="Nhập G" />
-        <input id="g2" placeholder="Nhập g" />
-        <input id="area-5" type="text" placeholder="Lưu lượng khói 1 vùng" disabled />
+        <p>Q: </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Lưu lượng khói tính toán cho một vùng khói = G / g (kg/m<sup>3</sup>). Theo bản vẽ trên thì là 32,198.31 / 1,2</span>
+        </span> 
+        <input id="area-5" type="text" placeholder="Lưu lượng khói 1 vùng" readonly />
         <button onclick="calculateArea5()">Kết quả</button>
       </div>
+      <div class="value-group">
+        <p>Lưu lượng hút khói cho 1 khoang cháy: </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Lưu lượng hút khói cho 1 khoang cháy: Lưu lượng khói phải hút * số quạt cho 1 khoang cháy. Theo bản vẽ là Q * 4 quạt</span>
+        </span> 
+        <input id="quat" type="text" placeholder="Nhập số lượng quạt" />
+        <input id="area-6" type="text" placeholder="Lưu lượng khói 1 vùng" readonly />
+        <button onclick="calculateArea6()">Kết quả</button>
+      </div>
+      <!-- <div class="value-group">
+        <p>Số lượng bể khối tính toán: </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Số lượng bể khối tính toán <= 1600 m<sup>2</sup> Được tính theo công thức: A<sub>k</sub> / 1600 </span>
+        </span> 
+        <input id="area-7" type="text" placeholder="Lưu lượng khói 1 vùng" readonly />
+        <button onclick="calculateArea7()">Kết quả</button>
+      </div>
+      
+      <div class="value-group">
+        <p>Tổng lưu lượng quạt hút khói bố trí cho gian phòng: </p>
+        <span class="tooltip">?
+          <span class="tooltip-text">Là số lượng bể khối x lưu lượng quạt. Theo bản vẽ là 0.6 (làm tròn) x Q </span>
+        </span> 
+        <input id="area-8" type="text" placeholder="Tổng lưu lượng quạt" readonly />
+        <button onclick="calculateArea8()">Kết quả</button>
+      </div> -->
     </section>
   </div>
 
